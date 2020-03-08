@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emma Stone</title>
+    <script>
+      var tasks = [];
+      var tempTasks = [];
+      var index = 0;
+      var ctr = 0;
+
+      //Loads the cache data;
+      function loaded() {
+        var a = parseInt(localStorage.getItem("index"));
+        for (var i = 0; i < a; i++) {
+          index = i + 1;
+          tasks.push(localStorage.getItem("task" + parseInt(i + 1)));
+          addTask(localStorage.getItem("task" + parseInt(i + 1)));
+        }
+      }
+
+      //Deletes a task
+      function deleteTask(x) {
+        for (var i = 0; i < tasks.length; i++) {
+          localStorage.removeItem("task" + parseInt(i + 1));
+          if (i != x) {
+            tempTasks.push(tasks[i]);
+          }
+        }
+        document.getElementById("t" + parseInt(x)).outerHTML = "";
+        tasks = tempTasks;
+        index = index - 1;
+        localStorage.setItem("index", index);
+        for (var i = 0; i < tasks.length; i++) {
+          localStorage.setItem("task" + parseInt(i + 1), tasks[i]);
+        }
+        location.reload(); //bug fixer <--
+      }
+
+      //Adding a new task
+      function clicked() {
+        var str = document.getElementById("taskmaster").value;
+        tasks.push(str);
+        index++;
+        addTask(str);
+      }
+
+      //Clean up
+      function emmaStone() {
+        index = 0;
+        document.getElementById("t4sks").innerHTML = "";
+        document.getElementById("button").innerHTML = "";
+        tasks = [];
+        localStorage.clear();
+      }
+
+      //Adding a new task part 2:: for re-use
+      function addTask(str) {
+        ctr++;
+        document.getElementById("t4sks").innerHTML +=
+          '<div id="t' +
+          parseInt(index - 1) +
+          '" onclick="deleteTask(' +
+          parseInt(index - 1) +
+          ')" class="tasks"><h1>Task ' +
+          index +
+          "</h1><p>" +
+          str +
+          "</p></div>";
+        if (ctr == 4) {
+          ctr = 0;
+          document.getElementById("t4sks").innerHTML += "<br/>";
+        }
+        localStorage.setItem("index", index);
+        localStorage.setItem("task" + index, tasks[index - 1]);
+      }
+
+      // I had sth in my mind by pink floyd
+      function checks() {
+        no();
+      }
+
+      function no() {
+        document.getElementById("button").innerHTML =
+          '<button onclick="clicked()" type="button" class="btn btn-info">Add to tasks</button>';
+      }
+    </script>
+  </head>
+  <body onload="loaded()" class="backgroundimg">
+    <div class="basic" id="vue-app">
+      <div class="container">
+        <div>
+          <input
+            style="width: 100%;"
+            id="taskmaster"
+            onchange="checks()"
+            class="form-control"
+            type="text"
+            placeholder="Add a task"
+          />
+          <br />
+          <div id="button"></div>
+          <div id="t4sks"></div>
+          <br />
+          <div class="clean">
+            <button onclick="emmaStone()" type="button" class="btn btn-danger">
+              Clean up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
