@@ -1,0 +1,40 @@
+.basic {
+  margin-top: 20px;
+}
+
+.backgroundimg {
+  background-image: url("https://i.insider.com/5ba530eb8cec638d1c8b456b?width=1100&format=jpeg&auto=webp");
+}
+
+.tasks {
+  width: 240px;
+  height: 300px;
+  background-color: crimson;
+  float: left;
+  margin: 10px;
+  box-shadow: 0 2px 5px 3px gray;
+  border-radius: 3px;
+  transition: 0.2s all;
+}
+
+.tasks:hover {
+  filter: blur(2px);
+  opacity: 0.8;
+  transform: scale(0.97);
+  background-color: aqua;
+  box-shadow: 0 1px 3px 2px crimson;
+}
+
+.tasks h1 {
+  padding-top: 3px;
+  text-align: center;
+}
+
+.tasks p {
+  padding: 15px;
+  font-weight: bold;
+}
+
+.clean {
+  float: right;
+}
