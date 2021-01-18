@@ -1,692 +1,110 @@
-﻿<html>
-  <head>
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/select2/select2.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/perfect-scrollbar/perfect-scrollbar.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!--===============================================================================================-->
-    <link rel="shortcut icon" type="image/x-icon" href="32x32.ico" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=greek"
-      rel="stylesheet"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <title>
-      ΠΡΟΓΡΑΜΜΑ ΕΑΡΙΝΟΥ ΕΞΑΜΗΝΟΥ - ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΩΝ
-      ΣΥΣΤΗΜΑΤΩΝ.
-    </title>
-    <meta
-      name="description"
-      content="Φτιάξτε το πρόγραμμα σας βάση τις επιλογές των μαθημάτων."
-    />
-    <style media="screen">
-      * {
-        font-family: "Comfortaa", cursive;
-      }
-      .container {
-        padding-top: 20px;
-      }
-    </style>
-    <script>
-      var courses = new Array(36);
-      for (var i = 0; i < courses.length; i++) {
-        courses[i] = new Array(8);
-      }
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-      courses[0] = [1201, "Μαθηματικά ΙΙ B1", "3", "14", "2", "5", "14", "2"];
-      courses[1] = [
-        1202,
-        "Μετρήσεις & κυκλώματα... B1",
-        "1",
-        "9",
-        "2",
-        "4",
-        "9",
-        "2"
-      ];
-      courses[2] = [
-        1203,
-        "Τεχνική συγγραφή, Παρουσίαση... B1",
-        "2",
-        "12",
-        "2",
-        "2",
-        "14",
-        "2"
-      ];
-      courses[3] = [
-        1204,
-        "Σχεδίαση Ψηφιακών συστημάτων B1",
-        "1",
-        "11",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[4] = [
-        1205,
-        "Αντικειμενοστρεφής... B1",
-        "3",
-        "11",
-        "2",
-        "5",
-        "11",
-        "2"
-      ];
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
-      courses[36] = [1201, "Μαθηματικά ΙΙ B2", "3", "11", "2", "5", "11", "2"];
-      courses[37] = [
-        1202,
-        "Μετρήσεις & κυκλώματα... B2",
-        "1",
-        "11",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[38] = [
-        1201,
-        "Τεχνική συγγραφή, Παρουσίαση... B2",
-        "2",
-        "14",
-        "2",
-        "2",
-        "12",
-        "2"
-      ];
-      courses[39] = [
-        1201,
-        "Σχεδίαση Ψηφιακών συστημάτων B2",
-        "1",
-        "9",
-        "2",
-        "4",
-        "9",
-        "2"
-      ];
-      courses[40] = [
-        1201,
-        "Αντικειμενοστρεφής... B2",
-        "3",
-        "9",
-        "2",
-        "5",
-        "9",
-        "2"
-      ];
-      courses[2] = [
-        1203,
-        "Τεχνική συγγραφή, Παρουσίαση... B1",
-        "2",
-        "14",
-        "2",
-        "2",
-        "12",
-        "2"
-      ];
-      courses[3] = [
-        1204,
-        "Σχεδίαση Ψηφιακών συστημάτων B1",
-        "1",
-        "11",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[4] = [
-        1205,
-        "Αντικειμενοστρεφής...B1",
-        "3",
-        "11",
-        "2",
-        "5",
-        "11",
-        "2"
-      ];
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-      courses[5] = [1401, "Βάσεις Ι", "1", "11", "2", "3", "11", "2"];
-      courses[6] = [
-        1402,
-        "Τηλεπικοινωνιακά συστήματα",
-        "2",
-        "12",
-        "2",
-        "3",
-        "14",
-        "2"
-      ];
-      courses[7] = [1403, "Λειτουργικά Ι", "2", "14", "2", "5", "9", "2"];
-      courses[8] = [
-        1404,
-        "Ηλεκτρονικά κυκλώματα",
-        "1",
-        "14",
-        "2",
-        "3",
-        "9",
-        "2"
-      ];
-      courses[9] = [
-        1405,
-        "Γλώσσες & Τεχνολογίες",
-        "1",
-        "9",
-        "2",
-        "2",
-        "16",
-        "2"
-      ];
-      courses[10] = [1601, "Τεχνητή Νοημοσύνη", "1", "9", "2", "4", "9", "2"];
-      courses[11] = [
-        1602,
-        "Ενσωματωμένα συστήματα",
-        "1",
-        "11",
-        "2",
-        "3",
-        "9",
-        "2"
-      ];
-      courses[12] = [
-        1611,
-        "Σύνθεση ηλεκτρονικών...",
-        "2",
-        "12",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[13] = [
-        1612,
-        "Κβαντική υπολογιστική",
-        "3",
-        "11",
-        "2",
-        "5",
-        "9",
-        "2"
-      ];
-      courses[14] = [
-        1613,
-        "Μεθοδολογίες σχεδιασμού μικρο...",
-        "1",
-        "9",
-        "0",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[15] = [
-        1641,
-        "Αριθμητικές μεθόδοι",
-        "2",
-        "14",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[16] = [
-        1642,
-        "Προηγμένα θέματα αλληλεπίδρασης",
-        "1",
-        "14",
-        "2",
-        "4",
-        "14",
-        "2"
-      ];
-      courses[17] = [1643, "Διοίκηση έργων", "3", "11", "2", "5", "9", "2"];
-      courses[18] = [
-        1671,
-        "Μικροκυματική τεχνολογία και...",
-        "1",
-        "14",
-        "2",
-        "3",
-        "16",
-        "2"
-      ];
-      courses[19] = [
-        1672,
-        "Οπτοηλεκτρονική και οπτικές...",
-        "4",
-        "14",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[20] = [1673, "Συστήματα ΜΜΕ", "2", "14", "4", "-1", "-1", "-1"];
-      courses[21] = [1801, "Ασφάλεια Π.Σ.", "1", "9", "2", "4", "9", "2"];
-      courses[22] = [
-        1802,
-        "Αρχές και μεθόδοι Μηχανικής...",
-        "2",
-        "12",
-        "2",
-        "4",
-        "14",
-        "2"
-      ];
-      courses[23] = [
-        1803,
-        "Διαδίκτυο των πραγμάτων",
-        "1",
-        "11",
-        "2",
-        "4",
-        "11",
-        "2"
-      ];
-      courses[24] = [
-        1811,
-        "Εφαρμογές συστημάτων αυτόματου...",
-        "3",
-        "9",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[25] = [
-        1812,
-        "Μετατροπείς ισχύος",
-        "3",
-        "14",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[26] = [1837, "Μικροηλεκτρονική", "1", "9", "0", "-1", "-1", "-1"];
-      courses[27] = [
-        1838,
-        "Εφαρμογές συστημάτων ισχύος...",
-        "2",
-        "14",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[28] = [
-        1839,
-        "Ηλεκτροκίνηση και ευφυή δίκτυα.",
-        "5",
-        "14",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[29] = [
-        1841,
-        "Οργάνωση δεδομένων και εξόρυξη...",
-        "1",
-        "14",
-        "2",
-        "2",
-        "14",
-        "2"
-      ];
-      courses[30] = [
-        1842,
-        "Διαδικτυακές υπηρεσίες προστιθέμενης...",
-        "3",
-        "11",
-        "2",
-        "5",
-        "11",
-        "2"
-      ];
-      courses[31] = [1871, "Ασύρματα δίκτυα", "3", "14", "2", "5", "14", "2"];
-      courses[32] = [
-        1872,
-        "Ειδικά θέματα δικτύων CCNA 1",
-        "2",
-        "12",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[33] = [
-        1873,
-        "Προηγμένα θέματα δικτύων",
-        "1",
-        "9",
-        "0",
-        "-1",
-        "-1",
-        "-1"
-      ];
-      courses[34] = [
-        1874,
-        "Συστήματα κινητών επικοινωνιών",
-        "3",
-        "11",
-        "2",
-        "5",
-        "11",
-        "2"
-      ];
-      courses[35] = [
-        1899,
-        "Ραδιοτηλεοπτική παραγωγή",
-        "5",
-        "14",
-        "2",
-        "-1",
-        "-1",
-        "-1"
-      ];
-
-      function fnExcelReport() {
-        var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
-        var textRange;
-        var j = 0;
-        tab = document.getElementById("tbl1"); // id of table
-
-        for (j = 0; j < tab.rows.length; j++) {
-          tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
-          //tab_text=tab_text+"</tr>";
-        }
-
-        tab_text = tab_text + "</table>";
-        tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, ""); //remove if u want links in your table
-        tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
-        tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
-
-        var ua = window.navigator.userAgent;
-        var msie = ua.indexOf("MSIE ");
-
-        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-          // If Internet Explorer
-          txtArea1.document.open("txt/html", "replace");
-          txtArea1.document.write(tab_text);
-          txtArea1.document.close();
-          txtArea1.focus();
-          sa = txtArea1.document.execCommand(
-            "SaveAs",
-            true,
-            "Say Thanks to Sumit.xls"
-          );
-        } //other browser not tested on IE 11
-        else
-          sa = window.open(
-            "data:application/vnd.ms-excel," + encodeURIComponent(tab_text)
-          );
-
-        return sa;
-      }
-      function reset() {
-        var table = document.getElementById("tbl1");
-        for (var i = 1; i < 12; i++) {
-          for (var j = 1; j < 6; j++) {
-            table.rows[i].cells[j].innerHTML = " ";
-          }
-        }
-      }
-      //ArrayOfCourses[ArithmosMathimatos:Onomamathimatos:MeraMathimatos1=Monday5=Friday:wra mathimatos9=9:00-10:00:diarkeia::repeat]
-      function sndSpring(obj) {
-        var id = obj.value;
-
-        var table = document.getElementById("tbl1");
-
-        for (var j = 0; j < courses[id][4]; j++) {
-          console.log();
-          table.rows[parseInt(courses[id][3]) + j - 8].cells[
-            courses[id][2]
-          ].innerHTML += courses[id][1] + "<br>";
-        }
-
-        if (courses[id][5] != -1) {
-          for (var j = 0; j < courses[id][7]; j++) {
-            table.rows[parseInt(courses[id][6]) + j - 8].cells[
-              courses[id][5]
-            ].innerHTML += courses[id][1] + "<br>";
-          }
-        }
-      }
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ΠΡΟΓΡΑΜΜΑ</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='database.js'>
     </script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="table100 ver4 m-b-110">
-        <table class="table table-hover" id="tbl1">
-          <thread>
-            <tr>
-              <th class="tg-0lax"></th>
-              <th class="tg-0lax">ΔΕΥΤΕΡΑ</th>
-              <th class="tg-0lax">ΤΡΙΤΗ</th>
-              <th class="tg-0lax">ΤΕΤΑΡΤΗ</th>
-              <th class="tg-0lax">ΠΕΜΠΤΗ</th>
-              <th class="tg-0lax">ΠΑΡΑΣΚΕΥΗ</th>
-            </tr>
-          </thread>
 
-          <tbody>
-            <tr>
-              <td class="tg-0lax">9:00-10:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">10:00-11:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">11:00-12:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">12:00-13:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">13:00-14:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">14:00-15:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">15:00-16:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">16:00-17:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">17:00-18:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">18:00-19:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-            <tr>
-              <td class="tg-0lax">19:00-20:00</td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-              <td class="tg-0lax"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01"
-            >Επιλέξτε Μάθημα</label
-          >
-        </div>
-        <select
-          onchange="sndSpring(this)"
-          class="custom-select"
-          id="inputGroupSelect01"
-        >
-          <option value="null">Επιλογή</option>
-          <option value="0">ΜΑΘΗΜΑΤΙΚΑ ΙΙ B1</option>
-          <option value="1"
-            >ΜΕΤΡΗΣΕΙΣ ΚΑΙ ΚΥΚΛΩΜΑΤΑ ΕΝΑΛΛΑΣΣΟΜΕΝΟΥ ΡΕΥΜΑΤΟΣ B1</option
-          >
-          <option value="2"
-            >ΤΕΧΝΙΚΗ ΣΥΓΓΡΑΦΗ, ΠΑΡΟΥΣΙΑΣΗ ΚΑΙ ΟΡΟΛΟΓΙΑ ΞΕΝΗΣ ΓΛΩΣΣΑΣ B1</option
-          >
-          <option value="3"> ΣΧΕΔΙΑΣΗ ΨΗΦΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ B1 </option
-          ><option value="4">ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΕΦΗΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ B1</option>
-          <option value="36">ΜΑΘΗΜΑΤΙΚΑ ΙΙ B2</option>
-          <option value="37"
-            >ΜΕΤΡΗΣΕΙΣ ΚΑΙ ΚΥΚΛΩΜΑΤΑ ΕΝΑΛΛΑΣΣΟΜΕΝΟΥ ΡΕΥΜΑΤΟΣ B2</option
-          >
-          <option value="38"
-            >ΤΕΧΝΙΚΗ ΣΥΓΓΡΑΦΗ, ΠΑΡΟΥΣΙΑΣΗ ΚΑΙ ΟΡΟΛΟΓΙΑ ΞΕΝΗΣ ΓΛΩΣΣΑΣ B2</option
-          >
-          <option value="39">ΣΧΕΔΙΑΣΗ ΨΗΦΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ B2</option>
-          <option value="40">ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΕΦΗΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ B2</option>
-          <option value="5">ΣΥΣΤΗΜΑΤΑ ΔΙΑΧΕΙΡΙΣΗΣ ΒΑΣΕΩΝ ΔΕΔΟΜΕΝΩΝ</option>
-          <option value="6">ΤΗΛΕΠΙΚΟΙΝΩΝΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</option>
-          <option value="7">ΕΙΣΑΓΩΓΗ ΣΤΑ ΛΕΙΤΟΥΡΓΙΚΑ ΣΥΣΤΗΜΑΤΑ</option>
-          <option value="8">ΗΛΕΚΤΡΟΝΙΚΑ ΚΥΚΛΩΜΑΤΑ</option>
-          <option value="9">ΓΛΩΣΣΕΣ ΚΑΙ ΤΕΧΝΟΛΟΓΙΕΣ ΙΣΤΟΥ</option>
-          <option value="10">ΤΕΧΝΗΤΗ ΝΟΗΜΟΣΥΝΗ</option>
-          <option value="11">ΕΝΣΩΜΑΤΩΜΕΝΑ ΣΥΣΤΗΜΑΤΑ</option>
-          <option value="12">ΣΥΝΘΕΣΗ ΗΛΕΚΤΡΟΝΙΚΩΝ ΚΥΚΛΩΜΑΤΩΝ</option>
-          <option value="13">ΚΒΑΝΤΙΚΗ ΥΠΛΟΓΙΣΤΙΚΗ</option>
-          <option value="14"
-            >ΜΕΘΟΔΟΛΟΓΙΕΣ ΣΧΕΔΙΑΣΜΟΥ ΜΙΚΡΟΗΛΕΚΤΡΟΝΙΚΩΝ ΚΥΚΛΩΜΑΤΩΝ</option
-          >
-          <option value="15">ΑΡΙΘΜΗΤΙΚΕΣ ΜΕΘΟΔΟΙ</option>
-          <option value="16">ΠΡΟΗΓΜΕΝΑ ΘΕΜΑΤΑ ΑΛΛΗΛΕΠΙΔΡΑΣΗΣ</option>
-          <option value="17">ΔΙΟΙΚΗΣΗ ΕΡΓΩΝ</option>
-          <option value="18">ΜΙΚΡΟΚΥΜΑΤΙΚΗ ΤΕΧΝΟΛΟΓΙΑ ΚΑΙ ΤΗΛΕΠΙΣΚΟΠΗΣΗ</option>
-          <option value="19">ΟΠΤΟΗΛΕΚΤΡΟΝΙΚΗ ΚΑΙ ΟΠΤΙΚΕΣ ΕΠΙΚΟΙΝΩΝΙΕΣ</option>
-          <option value="20">ΣΥΣΤΗΜΑΤΑ ΜΕΣΩΝ ΜΑΖΙΚΗΣ ΕΠΙΚΟΙΝΩΝΙΑΣ</option>
-          <option value="21">ΑΣΦΑΛΕΙΑ ΠΛΗΡΟΦΟΡΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ</option>
-          <option value="22">ΑΡΧΕΣ ΚΑΙ ΜΕΘΟΔΟΙ ΜΗΧΑΝΙΚΗΣ ΜΑΘΗΣΗΣ</option>
-          <option value="23">ΔΙΑΔΙΚΤΥΟ ΤΩΝ ΠΡΑΓΜΑΤΩΝ</option>
-          <option value="24">ΕΦΑΡΜΟΓΕΣ ΣΥΣΤΗΜΑΤΩΝ ΑΥΤΟΜΑΤΟΥ ΕΛΕΓΧΟΥ</option>
-          <option value="25">ΜΕΤΑΤΡΟΠΕΙΣ ΙΣΧΥΟΣ</option>
-          <option value="26">ΜΙΚΡΟΗΛΕΚΤΡΟΝΙΚΗ</option>
-          <option value="27">ΕΦΑΡΜΟΓΕΣ ΣΥΣΤΗΜΑΤΩΝ ΙΣΧΥΟΣ ΚΑΙ ΑΠΕ</option>
-          <option value="28">ΗΛΕΚΤΡΟΚΙΝΗΣΗ ΚΑΙ ΕΥΦΥΗ ΔΙΚΤΥΑ</option>
-          <option value="29">ΟΡΓΑΝΩΣΗ ΔΕΔΟΜΕΝΩΝ ΚΑΙ ΕΞΟΡΥΞΗ ΠΛΗΡΟΦΟΡΙΑΣ</option>
-          <option value="30">ΔΙΑΔΙΚΤΥΑΚΕΣ ΥΠΗΡΕΣΙΕΣ ΠΡΟΣΤΙΘΕΜΕΝΗΣ ΑΞΙΑΣ</option>
-          <option value="31">ΑΣΥΡΜΑΤΑ ΔΙΚΤΥΑ</option>
-          <option value="32">ΕΙΔΙΚΑ ΘΕΜΑΤΑ ΔΙΚΤΥΩΝ CCNA 1</option>
-          <option value="33">ΠΡΟΗΓΜΕΝΑ ΘΕΜΑΤΑ ΔΙΚΤΥΩΝ</option>
-          <option value="34">ΣΥΣΤΗΜΑΤΑ ΚΙΝΗΤΩΝ ΕΠΙΚΟΙΝΩΝΙΩΝ</option>
-          <option value="35">ΡΑΔΙΟΤΗΛΕΟΠΤΙΚΗ ΠΑΡΑΓΩΓΗ</option>
-        </select>
-        <button class="btn btn-dark" type="button" onclick="reset()">
-          reset
-        </button>
-        <iframe id="txtArea1" style="display:none"></iframe>
-        <br />
-      </div>
-      <button class="btn btn-info" id="btnExport" onclick="fnExcelReport();">
-        EXPORT IN EXCEL
-      </button>
-      <a href="./taskmaster/index.html">Click here</a>
-    </div>
-  </body>
+</head>
+<body>
+    <table style="width: 80%;" border="2">
+        <tbody>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+</body>
 </html>
