@@ -33,18 +33,28 @@
     <script src="jquery-3.5.1.min.js"></script>
     <script src='database.js'>
     </script>
-    <script src='PDFMAKE.js'>
-      
-    </script>
+    
     <script>
 
-        
+        function clearTable(){
+          clearClarifier();
+          var table=document.getElementById("mainTable");
+          for (var i=1;i<=9;i++){
+            for (var j=1;j<=5;j++){
+              table.rows[i].cells[j].innerHTML="";
+            }
+          }
+        }
+
+        function clearClarifier(){
+          for (var i = 0; i < mathimata.length; i++) {
+            clarifier[i] = 0;
+          }
+        }
 
         var clarifier = CreateArray(38)
-
-        for (var i = 0; i < mathimata.length; i++) {
-            clarifier[i] = 0;
-        }
+        clearClarifier();
+        
 
         function SendCourse(obj){
             if (obj.value==-1){
@@ -217,7 +227,14 @@
                     <option value="37">Ανάπτυξη Ολοκληρωμένων Πληροφοριακών Συστημάτων</option>
         </select>
         </div>
-        <div></div>
+        <iframe id="txtArea1" style="display:none"></iframe>
+        <div class="spacious">
+          <button type="button" onclick="fnExcelReport();" class="btn btn-success">  Export in excel  </button>
+          <div class="clearButton">
+            <button type="button" class="btn btn-danger" onclick="clearTable();">  Clear  </button>
+          </div>
+          
+        </div>
         
 
     </div>

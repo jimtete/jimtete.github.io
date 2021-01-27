@@ -37,7 +37,18 @@
     
 }
 
+.spacious{
+    
+    position: relative;
+    top: 15px;
+    
+}
 
+.clearButton{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
 
 
 
