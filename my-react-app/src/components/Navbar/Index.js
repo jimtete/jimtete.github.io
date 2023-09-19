@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfilePicture from "../Pictures/ProfilePicture";
 import {
     Nav,
     NavLink,
@@ -9,11 +10,14 @@ import {
 } from './NavbarElements';
 
 const Index = () => {
+    const profilePicture = 'https://media.licdn.com/dms/image/C4E03AQGef2_HpR10tw/profile-displayphoto-shrink_800_800/0/1607333355180?e=1700697600&v=beta&t=rQpDkxDzd2ty96ifLs_oTnQ8B12_ipVsj7OBh0uarmA';
+
     return (
         <>
             <Nav>
                 <Bars />
                 <NavMenu>
+                    <ProfilePicture imageUrl={profilePicture}/>
                     <NavLink to='/about' activeStyle>
                         About
                     </NavLink>

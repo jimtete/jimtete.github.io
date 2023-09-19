@@ -1,0 +1,14 @@
+/* ProfilePicture.module.css */
+.pfp {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%; /* Makes the image round */
+    overflow: hidden; /* Ensures the image stays within the rounded boundary */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s, box-shadow 0.25s; /* Add a transition for smooth scaling */
+}
+
+.pfp:hover {
+    transform: scale(1.05); /* Scale the image to 105% of its original size */
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.5);
+}
