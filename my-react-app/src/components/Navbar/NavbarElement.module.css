@@ -1,0 +1,15 @@
+.element_bg {
+    transition: 0.4s ease-in-out;
+    align-self: center;
+}
+
+.element_bg:hover{
+    align-self: center;
+    background-color: #148ca1;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
