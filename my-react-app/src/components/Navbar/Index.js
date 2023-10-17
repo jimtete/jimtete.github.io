@@ -20,7 +20,9 @@ const Index = () => {
             <Nav>
                 <Bars />
                 <NavMenu>
-                    <ProfilePicture imageUrl={profilePicture}/>
+                    <NavLink to='/'>
+                        <ProfilePicture to='/' imageUrl={profilePicture}/>
+                    </NavLink>
                     <NavLink to='/about' activeStyle>
                         <Item itemName={"About"}/>
                     </NavLink>
