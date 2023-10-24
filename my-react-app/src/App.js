@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
+import './index.css';
 import Navbar from './components/Navbar/Index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import classes from "./App.module.css";
 import Home from './pages';
 import About from './pages/about';
 import Events from './pages/events';
@@ -11,7 +11,7 @@ import Blogs from './pages/blogs';
 
 function App() {
     return (
-        <div className={classes.main}>
+        <div>
             <Router>
                 <Navbar />
                 <Routes>

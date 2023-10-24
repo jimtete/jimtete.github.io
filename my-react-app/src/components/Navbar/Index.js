@@ -1,7 +1,6 @@
 import React from 'react';
 import Item from "./Item";
 import ProfilePicture from "../Pictures/ProfilePicture";
-import classes from "./NavbarElement.module.css";
 import {
     Nav,
     NavLink,
@@ -41,8 +40,6 @@ const Index = () => {
                     <NavLink to='/sign-up' activeStyle>
                         <Item itemName={"Sign up"}/>
                     </NavLink>
-                    {/* Second Nav */}
-                    {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
                 </NavMenu>
             </Nav>
         </>
