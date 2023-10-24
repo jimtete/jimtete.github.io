@@ -22,20 +22,20 @@ const Index = () => {
                     <NavLink to='/'>
                         <ProfilePicture to='/' imageUrl={profilePicture}/>
                     </NavLink>
-                    <NavLink to='/about' activeStyle>
-                        <Item itemName={"About"}/>
-                    </NavLink>
-                    <NavLink to='/events' activeStyle>
-                        <Item itemName={"Events"}/>
-                    </NavLink>
-                    <NavLink to='/annual' activeStyle>
-                        <Item itemName={"Annual Report"}/>
-                    </NavLink>
-                    <NavLink to='/team' activeStyle>
-                        <Item itemName={"Teams"}/>
-                    </NavLink>
                     <NavLink to='/blogs' activeStyle>
                         <Item itemName={"Blogs"}/>
+                    </NavLink>
+                    <NavLink to='/about' activeStyle>
+                        <Item itemName={"Education"}/>
+                    </NavLink>
+                    <NavLink to='/events' activeStyle>
+                        <Item itemName={"Experience"}/>
+                    </NavLink>
+                    <NavLink to='/annual' activeStyle>
+                        <Item itemName={"Projects"}/>
+                    </NavLink>
+                    <NavLink to='/team' activeStyle>
+                        <Item itemName={"Contact"}/>
                     </NavLink>
                     <NavLink to='/sign-up' activeStyle>
                         <Item itemName={"Sign up"}/>
